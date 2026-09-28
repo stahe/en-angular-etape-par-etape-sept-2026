@@ -1,0 +1,912 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Step-by-Step Introduction to the [Angular] Web Framework">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/en-angular-etape-par-etape-sept-2026/introduction.html">
+      
+      
+        <link rel="prev" href="index.html">
+      
+      
+        <link rel="next" href="getting-started-with-angular.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>1. Introduction - Step-by-Step Introduction to the [Angular] Web Framework</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Step-by-Step Introduction to the [Angular] Web Framework";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Step-by-Step Introduction to the [Angular] Web Framework" class="md-header__button md-logo" aria-label="Step-by-Step Introduction to the [Angular] Web Framework" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Step-by-Step Introduction to the [Angular] Web Framework
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1. Introduction
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/en-angular-etape-par-etape-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Step-by-Step Introduction to the [Angular] Web Framework" class="md-nav__button md-logo" aria-label="Step-by-Step Introduction to the [Angular] Web Framework" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Step-by-Step Introduction to the [Angular] Web Framework
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/en-angular-etape-par-etape-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="introduction.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-angulars-role-in-a-web-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. Angular’s Role in a Web Application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-tools-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. Tools Used
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3. Examples
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-document-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4. Document Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="getting-started-with-angular.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Getting Started with Angular
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-components.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. The Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="routing.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="observables-and-shared-state.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Observables and Shared State
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="internationalization.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Internationalization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-rdvmedecins-server-a-black-box.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. The RdvMedecins server, a black box
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="communicating-with-the-server.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Communicating with the server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="interim-conclusion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Interim Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="case-study-the-angular-client-for-the-rdvmedecins-application.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Case Study: The Angular client for the RdvMedecins application
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="deployment.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conclusion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="appendices.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Appendices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="1-introduction">1. <span style="color: #2e74b5">Introduction</span></h1>
+<p>The document’s PDF is <a href="https://1drv.ms/b/c/f53a919f43d27eb5/IQDqm4-2ARAGQqCZIajN1nX3AY0Bh9ICIodQl7nj4ik6T5Q?e=t9e1Y4"><u><span style="color: #0563c1">HERE</span></u></a>.</p>
+<p>The document’s codes are <a href="https://1drv.ms/u/c/f53a919f43d27eb5/IQAkksvXU_F-TqTvAFQLHTviAdU5y4wJ4i4EfdjSQ9M1ogU?e=DajopE"><u><span style="color: #0563c1">HERE</span></u></a>.</p>
+<p>This document is a product of <strong>Anthropic’s IA Claude</strong>. It follows the course <a href="https://stahe.github.io/en-nestjs-html-sept-2026/"><u><span style="color: #0563c1">“Step-by-Step Introduction to the NestJS Web Framework</span></u></a>,” from which it <strong>shifts the perspective</strong>:</p>
+<ul>
+<li>In the course <em>[NestJS]</em>, the <strong>server</strong> generates the pages HTML (view engine <em>[Handlebars]</em>); the browser simply displays them;</li>
+<li>in this course, the pages are generated <strong>in the browser</strong> by an application <em>[Angular]</em>; the server, now reduced to a simple server JSON, provides only data.</li>
+</ul>
+<p>The application’s pages, however, remain unchanged: they are those of the <em>[RdvMedecins]</em> application already presented with the other frameworks (login with CAPTCHA, doctor’s schedule, appointment window, patient portal, doctor and client management, account creation, French and English).</p>
+<p>This document follows the same structure as its predecessors: first, numerous short examples, each focusing on a specific concept from <em>[Angular]</em>, followed by a complete case study—the <em>[Angular]</em> client for the <em>[RdvMedecins]</em> application—with all files annotated. It follows the outline of the course <a href="https://stahe.github.io/en-vuejs-etape-par-etape-sept-2026/"><u><span style="color: #0563c1">“Step-by-Step Introduction to the Vue.js Framework</span></u></a>”: readers familiar with <em>[Vue.js]</em> will find the same examples, written in the style of <em>[Angular]</em>. Since <em>[Angular]</em> is a more feature-rich framework, there are more examples: 25 instead of 20.</p>
+<p>A course already exists on this topic: <a href="https://stahe.github.io/en-angular-nestjs-sept-2026/"><u><span style="color: #0563c1">An Example of an Angular/NestJS Client/Server (2026)</span></u></a>, which covers both the server and the client. This document differs in its approach: the server is treated as a <strong>black box</strong>, with only the API and JSON of interest to us, and we learn <em>[Angular]</em> step by step before tackling the full client.</p>
+<h2 id="11-angulars-role-in-a-web-application">1.1. <span style="color: #2e74b5">Angular’s Role in a Web Application</span></h2>
+<p>The application has two parts, which communicate with each other only through requests:</p>
+<p><img src="images/1000000000000AF0000002CA66D24AB3.png" width="605" height="154" style="width:16cm;height:4.08cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000AF0000002CA66D24AB3.png" /></p>
+<ul>
+<li>1: The <em>[Angular]</em> application, running in the browser, sends a HTTP request to the server, for example, <strong><em>[GET /api/agenda?idMedecin=1&amp;jour=2026-10-05]</em></strong>;</li>
+<li>2: The server responds with data JSON: this doctor’s schedule for that day. It does not generate any pages;</li>
+<li>3: Using this data, <em>[Angular]</em> updates the page displayed in the browser without reloading it.</li>
+</ul>
+<p>The following diagram compares the two architectures:</p>
+<p><img src="images/1000000000000882000003785B5D34EF.png" width="605" height="247" style="width:16cm;height:6.523cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000882000003785B5D34EF.png" /></p>
+<p>The browser loads only a single, nearly empty page—HTML—upon startup. Everything else is generated by <em>[JavaScript]</em> code: this is known as a <strong>single-page application</strong> (SPA, for <em>[Single Page Application]</em>). When the user clicks on an internal link, no page is requested from the server: the <em>[Angular]</em> router changes the displayed URL and replaces the page’s content.</p>
+<p><em>[Angular]</em> is a framework created by Google. Its first version, <em>[AngularJS]</em> (2010), was completely rewritten in 2016: it is this rewrite, known as <em>[TypeScript]</em>, that is now simply called <em>[Angular]</em>, and which releases a new major version every six months. It is based on three ideas:</p>
+<ul>
+<li><strong>components</strong>: the interface is broken down into reusable pieces (a navigation bar, a form field, a confirmation window, etc.). A component is a <em>[TypeScript]</em> class, associated with a HTML template and a CSS style;</li>
+<li><strong>Responsiveness</strong>, based on <strong>signals</strong>: A component’s data is stored in signals. When one of them changes, <em>[Angular]</em> automatically updates the parts of the page that display it. We never write code that directly modifies the page;</li>
+<li><strong>Dependency injection</strong>: Components do not create the objects they need (server access, logged-in user, language, etc.) on their own; they <strong>request</strong> them, and <em>[Angular]</em> provides them. This is the mechanism that the <em>[NestJS]</em> course has already presented on the server side—<em>[NestJS]</em> was, in fact, inspired by it.</li>
+</ul>
+<p>Unlike <em>[Vue.js]</em>, <em>[Angular]</em> is an “all-in-one” framework: router, forms, HTTP client, animations, and tests are provided by the <em>[Angular]</em> team itself, along with recommended usage guidelines.</p>
+<p>We will use <em>[Angular]</em> 22, with its most recent features: standalone components (<em>[standalone]</em>), signals, new template syntax (<em>[@if]</em>, <em>[@for]</em>), signal-based forms, and change detection without <em>[zone.js]</em> (<em>[zoneless]</em>), which is the default behavior in <em>[Angular]</em> 22.</p>
+<h2 id="12-tools-used">1.2. <span style="color: #2e74b5">Tools Used</span></h2>
+<p>The examples were written and tested using the following tools (their installation is described in the appendix):</p>
+<ul>
+<li><em>[Node.js]</em> 24 (or at least 22.22.3: this is the requirement for <em>[Angular]</em> 22) and its package manager <em>[npm]</em>;</li>
+<li>the editor <em>[Visual Studio Code]</em>, with the extension <em>[Angular Language Service]</em>;</li>
+<li>a recent browser (<em>[Chrome]</em>, <em>[Firefox]</em>, <em>[Edge]</em>), if possible with the extension <em>[Angular DevTools]</em>;</li>
+<li>the command-line tool <em>[curl]</em>, which displays the raw HTTP responses;</li>
+<li>the SGBD <em>[MySQL]</em> (or <em>[MariaDB]</em>), for example, the one from <em>[Laragon]</em> under <em>[Windows]</em>: it is required for the JSON server, as described in the chapter introducing it.</li>
+</ul>
+<p>The libraries are those of the <em>[package.json]</em> files: <em>[Angular]</em> 22.2 (the core, the router, the forms, the HTTP client), the command-line tool <em>[Angular CLI]</em> (command <em>[ng]</em>), <em>[RxJS]</em> 7.8 (observables), <em>[ngx-translate]</em> 18 (languages), <em>[TypeScript]</em> 6.0, <em>[Bootstrap]</em> 5.3.</p>
+<h2 id="13-examples">1.3. <span style="color: #2e74b5">Examples</span></h2>
+<p>The codes in the document are organized into three folders:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>livrable/
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>├── exemples-angular/          les 25 petits exemples d'Angular
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>├── rdvmedecins-nestjs-json/   le serveur JSON RdvMedecins (la « boîte noire »)
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>└── rdvmedecins-angular/       le client Angular de l'étude de cas
+</code></pre></div></td></tr></table></div>
+<p>The examples folder is a <strong>workspace named</strong> <em>[Angular]</em> (<em>[workspace]</em>): it contains twenty-five small applications—one per example—that share the same libraries:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">exemples</span><span class="o">-</span><span class="n">angular</span><span class="o">/</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="err">├──</span><span class="w"> </span><span class="mo">01</span><span class="o">-</span><span class="n">premiere</span><span class="o">-</span><span class="n">application</span><span class="o">/</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="err">├──</span><span class="w"> </span><span class="mo">02</span><span class="o">-</span><span class="n">signaux</span><span class="o">/</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="err">├──</span><span class="w"> </span><span class="p">...</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="err">├──</span><span class="w"> </span><span class="mi">25</span><span class="o">-</span><span class="n">erreurs</span><span class="o">-</span><span class="n">serveur</span><span class="o">/</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="err">├──</span><span class="w"> </span><span class="n">commun</span><span class="o">/</span><span class="w">              </span><span class="n">du</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">partagé</span><span class="w"> </span><span class="n">par</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">exemples</span><span class="w"> </span><span class="mi">24</span><span class="w"> </span><span class="n">et</span><span class="w"> </span><span class="mi">25</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="err">├──</span><span class="w"> </span><span class="n">node_modules</span><span class="o">/</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="err">├──</span><span class="w"> </span><span class="n">angular</span><span class="p">.</span><span class="na">json</span><span class="w">         </span><span class="n">la</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="n">des</span><span class="w"> </span><span class="n">vingt</span><span class="o">-</span><span class="n">cinq</span><span class="w"> </span><span class="n">applications</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="err">├──</span><span class="w"> </span><span class="n">package</span><span class="p">.</span><span class="na">json</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="err">├──</span><span class="w"> </span><span class="n">proxy</span><span class="p">.</span><span class="na">conf</span><span class="p">.</span><span class="na">json</span><span class="w">      </span><span class="n">le</span><span class="w"> </span><span class="n">proxy</span><span class="w"> </span><span class="n">vers</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">serveur</span><span class="w"> </span><span class="nf">JSON</span><span class="w"> </span><span class="p">(</span><span class="n">exemples</span><span class="w"> </span><span class="mi">22</span><span class="w"> </span><span class="n">à</span><span class="w"> </span><span class="mi">25</span><span class="p">)</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="err">└──</span><span class="w"> </span><span class="n">tsconfig</span><span class="p">.</span><span class="na">json</span>
+</code></pre></div></td></tr></table></div>
+<p>Install the libraries once, in a console opened to the <em>[exemples-angular]</em> folder (in <em>[VS Code]</em>: Terminal menu / New Terminal):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>npm install
+</code></pre></div>
+<p>Then run a sample by entering its name:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>npm start 01-premiere-application
+</code></pre></div>
+<p>The <em>[Angular]</em> development server compiles the example and serves it on port 4200: open it at http://localhost:4200/. This server does not need to be restarted when you modify a file: each saved file is immediately recompiled, and the browser page updates automatically. Stop it using <em>[Ctrl-C]</em> in the console before running the next example (only one example at a time can occupy port 4200).</p>
+<p>Examples 22 through 25 query the server JSON <em>[RdvMedecins]</em>: you will need to have it installed and running, as explained in the chapter dedicated to it.</p>
+<h2 id="14-document-contents">1.4. <span style="color: #2e74b5">Document Contents</span></h2>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Chapter</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Contents</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Examples</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Getting Started</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">An Angular workspace, signals, templates, events, forms (ngModel, signal-driven forms, reactive forms), validation, pipes</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">01–09</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Components</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Inputs, outputs, `model()`, content projection, lifecycle, services and dependency injection, directives, confirmation dialog</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">10–16</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Routing</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">the router, navigation guards</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">17 and 18</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Observables and shared state</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">RxJS, signaling services</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">19 and 20</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Internationalization</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">An application in French and English</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">21</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">The server, a black box</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Installation of the JSON server, its API, curl examples</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">-</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Interacting with the server</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">HttpClient, connection and cookies, interceptor, API access layer, httpResource, server errors</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">22 to 25</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Case Study</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">The Angular client of the RdvMedecins application</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">-</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Deployment</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">The compiled client, served by the JSON server</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">-</div></td></tr></table>
+
+<p>Each example is presented with its complete code, commented line by line, and a screenshot of its execution. The code itself is extensively commented: these comments are part of the course.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        This tutorial, written by Anthropic's AI <strong>Claude</strong> at the request of <strong>Serge Tahé</strong>, is made available to the public under the terms of the
+        <em>Creative Commons Attribution – No Commercial Use –
+        ShareAlike 3.0 Unported</em>.
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
